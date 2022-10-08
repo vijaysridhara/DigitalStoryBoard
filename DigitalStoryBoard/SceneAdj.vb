@@ -41,7 +41,7 @@ Friend Class SceneAdj
     Private Function GetFullSceneID() As String
         Dim final As String = txtID.Text
 
-        While final.Length < 6
+        While final.Length < 8
             final = "0" & final
         End While
         Return final

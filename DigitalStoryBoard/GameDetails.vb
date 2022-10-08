@@ -50,7 +50,7 @@ Friend Class GameDetails
         Next
     End Sub
     Private Sub GameDetails_Load(sender As Object, e As EventArgs) Handles MyBase.Load
-        cboSize.SelectedIndex = 0
+        If Me._gme Is Nothing Then cboSize.SelectedIndex = 0
     End Sub
 
     Private Sub butOK_Click(sender As Object, e As EventArgs) Handles butOK.Click

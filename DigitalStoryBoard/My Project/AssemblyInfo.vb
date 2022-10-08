@@ -9,7 +9,7 @@ Imports System.Runtime.InteropServices
 ' Review the values of the assembly attributes
 
 <Assembly: AssemblyTitle("DigitalStoryBoard")>
-<Assembly: AssemblyDescription("A quick draft story board application, where you can quickly create scenes and sequence them. Have questions, write to vitallogic@gmail.com")>
+<Assembly: AssemblyDescription("A quick draft story board application, where you can quickly create scenes and sequence them.")>
 <Assembly: AssemblyCompany("Vijay Sridhara")>
 <Assembly: AssemblyProduct("DigitalStoryBoard")>
 <Assembly: AssemblyCopyright("Copyright ©  Vijay Sridhara 2020-2022")>
@@ -31,5 +31,5 @@ Imports System.Runtime.InteropServices
 ' by using the '*' as shown below:
 ' <Assembly: AssemblyVersion("1.0.*")>
 
-<Assembly: AssemblyVersion("0.1.4")>
-<Assembly: AssemblyFileVersion("0.1.4.0")>
+<Assembly: AssemblyVersion("0.1.4.1")>
+<Assembly: AssemblyFileVersion("0.1.4.1")>
