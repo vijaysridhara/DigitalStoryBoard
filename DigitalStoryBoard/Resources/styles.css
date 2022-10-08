@@ -1,0 +1,169 @@
+h1 {
+    font-family: "Arial";
+    font-size:36px;
+    font-style:normal;
+    color: black;
+    text-align:center;
+}
+h2 {
+    font-family: "Arial";
+    font-size: 20px;
+    font-style: normal;
+    color: black;
+}
+h3 {
+    font-family: "Arial";
+   font-size: 16px;
+    font-style: normal;
+    color: black;
+    
+}
+h4 {
+    font-family: "Times New Roman";
+    font-size: 15px;
+    font-weight:bold;
+    font-style: normal;
+    color: black;
+}
+.mainpage{
+    width:750px;
+    border:1px solid black;
+    margin:auto;
+    padding:10px;
+    background-color:lightgray;
+}
+ 
+.subtitle{
+    font-family:"Times New Roman";
+    font-size:16px;
+    color:black;
+    font-style:italic;
+
+   text-align:center;
+}
+.genre {
+    font-family: "Times New Roman";
+    font-size: 16px;
+    color: black;
+    font-weight:bold;
+   text-align:center;
+}
+.desc {
+    font-family: Arial, Helvetica, sans-serif;
+    background-color:antiquewhite;
+   margin:auto;
+    font-size: 14px;
+    color: black;
+    width:600px;
+    height: 200px;
+    padding:30px;
+    margin-top:20px;
+}
+.charname {
+    border:1px solid black;
+    font-family: Arial, Helvetica, sans-serif;
+    font-size: 16px;
+    font-weight:bold;
+    color: black;
+    color:blue;
+    width:330px;
+    height:140px;
+    padding:10px;
+    margin:10px;
+}
+.charname2 {
+    border: 1px solid black;
+    font-family: Arial, Helvetica, sans-serif;
+    font-size: 16px;
+    font-weight: bold;
+    color: black;
+    color: blue;
+    width: 660px;
+    
+    padding: 10px;
+    margin: 10px;
+}
+.charimg{
+    float:left;
+    
+}
+.variables {
+    font-family: Arial, Helvetica, sans-serif;
+    font-size: 14px;
+    font-style: normal;
+    color: black;
+}
+.scenehead {
+    width: 98%;
+    height: 50px;
+    padding: 5px;
+    background-color: purple;
+}
+ 
+.imp {
+    font-family: Arial, Helvetica, sans-serif;
+    font-size: 14px;
+    color: black;
+    float:left;
+    width:20%;
+    background-color:beige;
+    height:70%;
+    padding-left:10px;
+    padding-top:15px;
+    
+ }
+.page {
+    background-color: beige;
+    font-family: Arial, Helvetica, sans-serif;
+    font-size: 14px;
+    color: black;
+    float: right;
+    width: 20%;
+    height: 70%;
+        text-align: right;
+    padding-top: 15px;
+    padding-right:10px;
+}
+.brief {
+    font-family: "Arial";
+    font-size: 14px;
+    color: black;
+    padding: 10px;
+    text-align: left;
+}
+.chars {
+    font-family: "Arial";
+    font-size: 12px;
+    color: black;
+    padding: 10px;
+    text-align: left;
+}
+.vars {
+    font-family: "Arial";
+    font-size: 14px;
+    color: black;
+    padding: 10px;
+    text-align: left;
+}
+.dialogs {
+    font-family: "Arial";
+    font-size: 14px;
+    font-style:italic;
+    color: black;
+    padding: 10px;
+    text-align: left;
+}
+.logic {
+    font-family: "Arial";
+    font-size: 14px;
+    color: black;
+    padding: 10px;
+    text-align: left;
+}
+.ideas {
+    font-family: "Arial";
+    font-size: 14px;
+    color: black;
+    padding: 10px;
+    text-align: left;
+}

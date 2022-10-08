@@ -1,0 +1,239 @@
+﻿<?xml version="1.0" encoding="utf-8"?>
+<Project ToolsVersion="15.0" xmlns="http://schemas.microsoft.com/developer/msbuild/2003">
+  <Import Project="$(MSBuildExtensionsPath)\$(MSBuildToolsVersion)\Microsoft.Common.props" Condition="Exists('$(MSBuildExtensionsPath)\$(MSBuildToolsVersion)\Microsoft.Common.props')" />
+  <PropertyGroup>
+    <Configuration Condition=" '$(Configuration)' == '' ">Debug</Configuration>
+    <Platform Condition=" '$(Platform)' == '' ">AnyCPU</Platform>
+    <ProjectGuid>{3C3B0073-02B2-4795-ADD9-A5BECC9650EB}</ProjectGuid>
+    <OutputType>WinExe</OutputType>
+    <StartupObject>VijaySridhara.Applications.My.MyApplication</StartupObject>
+    <RootNamespace>VijaySridhara.Applications</RootNamespace>
+    <AssemblyName>DigitalStoryBoard</AssemblyName>
+    <FileAlignment>512</FileAlignment>
+    <MyType>WindowsForms</MyType>
+    <TargetFrameworkVersion>v4.8</TargetFrameworkVersion>
+    <AutoGenerateBindingRedirects>true</AutoGenerateBindingRedirects>
+    <Deterministic>true</Deterministic>
+    <TargetFrameworkProfile />
+  </PropertyGroup>
+  <PropertyGroup Condition=" '$(Configuration)|$(Platform)' == 'Debug|AnyCPU' ">
+    <PlatformTarget>AnyCPU</PlatformTarget>
+    <DebugSymbols>true</DebugSymbols>
+    <DebugType>full</DebugType>
+    <DefineDebug>true</DefineDebug>
+    <DefineTrace>true</DefineTrace>
+    <OutputPath>bin\Debug\</OutputPath>
+    <DocumentationFile>DigitalStoryBoard.xml</DocumentationFile>
+    <NoWarn>42016,41999,42017,42018,42019,42032,42036,42020,42021,42022</NoWarn>
+  </PropertyGroup>
+  <PropertyGroup Condition=" '$(Configuration)|$(Platform)' == 'Release|AnyCPU' ">
+    <PlatformTarget>AnyCPU</PlatformTarget>
+    <DebugType>pdbonly</DebugType>
+    <DefineDebug>false</DefineDebug>
+    <DefineTrace>true</DefineTrace>
+    <Optimize>true</Optimize>
+    <OutputPath>bin\Release\</OutputPath>
+    <DocumentationFile>DigitalStoryBoard.xml</DocumentationFile>
+    <NoWarn>42016,41999,42017,42018,42019,42032,42036,42020,42021,42022</NoWarn>
+  </PropertyGroup>
+  <PropertyGroup>
+    <OptionExplicit>On</OptionExplicit>
+  </PropertyGroup>
+  <PropertyGroup>
+    <OptionCompare>Binary</OptionCompare>
+  </PropertyGroup>
+  <PropertyGroup>
+    <OptionStrict>Off</OptionStrict>
+  </PropertyGroup>
+  <PropertyGroup>
+    <OptionInfer>On</OptionInfer>
+  </PropertyGroup>
+  <PropertyGroup>
+    <ApplicationIcon>dsbicon.ico</ApplicationIcon>
+  </PropertyGroup>
+  <ItemGroup>
+    <Reference Include="ColorPalette">
+      <HintPath>..\..\ColorPalette\ColorPalette\bin\Debug\ColorPalette.dll</HintPath>
+    </Reference>
+    <Reference Include="System" />
+    <Reference Include="System.Data" />
+    <Reference Include="System.Deployment" />
+    <Reference Include="System.Design" />
+    <Reference Include="System.Drawing" />
+    <Reference Include="System.Windows.Forms" />
+    <Reference Include="System.Xml" />
+    <Reference Include="System.Core" />
+    <Reference Include="System.Xml.Linq" />
+    <Reference Include="System.Data.DataSetExtensions" />
+    <Reference Include="System.Net.Http" />
+  </ItemGroup>
+  <ItemGroup>
+    <Import Include="Microsoft.VisualBasic" />
+    <Import Include="System" />
+    <Import Include="System.Collections" />
+    <Import Include="System.Collections.Generic" />
+    <Import Include="System.Data" />
+    <Import Include="System.Drawing" />
+    <Import Include="System.Diagnostics" />
+    <Import Include="System.Windows.Forms" />
+    <Import Include="System.Linq" />
+    <Import Include="System.Xml.Linq" />
+    <Import Include="System.Threading.Tasks" />
+  </ItemGroup>
+  <ItemGroup>
+    <Compile Include="AboutDSB.Designer.vb">
+      <DependentUpon>AboutDSB.vb</DependentUpon>
+    </Compile>
+    <Compile Include="AboutDSB.vb">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="Canvas.vb">
+      <SubType>Component</SubType>
+    </Compile>
+    <Compile Include="ComFun.vb" />
+    <Compile Include="ERichTextbox.vb">
+      <SubType>Component</SubType>
+    </Compile>
+    <Compile Include="Export\Styles.vb" />
+    <Compile Include="GameDetails.Designer.vb">
+      <DependentUpon>GameDetails.vb</DependentUpon>
+    </Compile>
+    <Compile Include="GameDetails.vb">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="MainForm.vb">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="MainForm.Designer.vb">
+      <DependentUpon>MainForm.vb</DependentUpon>
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="Game.vb" />
+    <Compile Include="Move.Designer.vb">
+      <DependentUpon>Move.vb</DependentUpon>
+    </Compile>
+    <Compile Include="Move.vb">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="My Project\AssemblyInfo.vb" />
+    <Compile Include="My Project\Application.Designer.vb">
+      <AutoGen>True</AutoGen>
+      <DependentUpon>Application.myapp</DependentUpon>
+      <DesignTime>True</DesignTime>
+    </Compile>
+    <Compile Include="My Project\MoveScene.Designer.vb">
+      <DependentUpon>MoveScene.vb</DependentUpon>
+    </Compile>
+    <Compile Include="My Project\MoveScene.vb">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="My Project\Resources.Designer.vb">
+      <AutoGen>True</AutoGen>
+      <DesignTime>True</DesignTime>
+      <DependentUpon>Resources.resx</DependentUpon>
+    </Compile>
+    <Compile Include="My Project\Settings.Designer.vb">
+      <AutoGen>True</AutoGen>
+      <DependentUpon>Settings.settings</DependentUpon>
+      <DesignTimeSharedInput>True</DesignTimeSharedInput>
+    </Compile>
+    <Compile Include="RecoverScene.Designer.vb">
+      <DependentUpon>RecoverScene.vb</DependentUpon>
+    </Compile>
+    <Compile Include="RecoverScene.vb">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="Scene.vb" />
+    <Compile Include="SceneAdj.Designer.vb">
+      <DependentUpon>SceneAdj.vb</DependentUpon>
+    </Compile>
+    <Compile Include="SceneAdj.vb">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="SceneDetails.Designer.vb">
+      <DependentUpon>SceneDetails.vb</DependentUpon>
+    </Compile>
+    <Compile Include="SceneDetails.vb">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="Export\StoryExporter.vb" />
+    <Compile Include="StoryOutline.Designer.vb">
+      <DependentUpon>StoryOutline.vb</DependentUpon>
+    </Compile>
+    <Compile Include="StoryOutline.vb">
+      <SubType>Form</SubType>
+    </Compile>
+  </ItemGroup>
+  <ItemGroup>
+    <EmbeddedResource Include="AboutDSB.resx">
+      <DependentUpon>AboutDSB.vb</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="Canvas.resx">
+      <DependentUpon>Canvas.vb</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="GameDetails.resx">
+      <DependentUpon>GameDetails.vb</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="MainForm.resx">
+      <DependentUpon>MainForm.vb</DependentUpon>
+      <SubType>Designer</SubType>
+    </EmbeddedResource>
+    <EmbeddedResource Include="Move.resx">
+      <DependentUpon>Move.vb</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="My Project\MoveScene.resx">
+      <DependentUpon>MoveScene.vb</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="My Project\Resources.resx">
+      <Generator>VbMyResourcesResXFileCodeGenerator</Generator>
+      <LastGenOutput>Resources.Designer.vb</LastGenOutput>
+      <CustomToolNamespace>My.Resources</CustomToolNamespace>
+      <SubType>Designer</SubType>
+    </EmbeddedResource>
+    <EmbeddedResource Include="RecoverScene.resx">
+      <DependentUpon>RecoverScene.vb</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="SceneAdj.resx">
+      <DependentUpon>SceneAdj.vb</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="SceneDetails.resx">
+      <DependentUpon>SceneDetails.vb</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="StoryOutline.resx">
+      <DependentUpon>StoryOutline.vb</DependentUpon>
+    </EmbeddedResource>
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="My Project\Application.myapp">
+      <Generator>MyApplicationCodeGenerator</Generator>
+      <LastGenOutput>Application.Designer.vb</LastGenOutput>
+    </None>
+    <None Include="My Project\Settings.settings">
+      <Generator>SettingsSingleFileGenerator</Generator>
+      <CustomToolNamespace>My</CustomToolNamespace>
+      <LastGenOutput>Settings.Designer.vb</LastGenOutput>
+    </None>
+    <None Include="App.config" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="Resources\target-icon.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="Resources\charicon.ico" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="Resources\sceneicon.ico" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="Resources\varicon.ico" />
+  </ItemGroup>
+  <ItemGroup>
+    <Content Include="dsbicon.ico" />
+    <Content Include="Export\customstyles.css" />
+    <None Include="Resources\styles.css" />
+    <None Include="Resources\Check-2-icon.png" />
+    <None Include="Resources\check-1-icon.png" />
+    <None Include="Resources\Actions-games-config-board-icon.png" />
+  </ItemGroup>
+  <Import Project="$(MSBuildToolsPath)\Microsoft.VisualBasic.targets" />
+</Project>
