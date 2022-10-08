@@ -225,7 +225,7 @@ Friend Class Canvas
         For i As Integer = 0 To noOfBandsH
             nextxLoc = i * (bw + SceneH) + 5
             e.Graphics.DrawLine(bandPen, New Point(0, nextxLoc), New Point(Me.Width, nextxLoc))
-            e.Graphics.DrawString(nextxLoc, titleFont, Brushes.Black, New Point(10, nextxLoc))
+            ' e.Graphics.DrawString(nextxLoc, titleFont, Brushes.Black, New Point(10, nextxLoc)) # for debugging
         Next
         e.Graphics.FillRectangle(Brushes.Blue, New RectangleF(Me.Width - SceneW - bw, bw, SceneW, SceneH))
         If Not _currentGame Is Nothing Then
