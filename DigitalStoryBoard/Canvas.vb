@@ -37,7 +37,7 @@ Friend Class Canvas
     Friend WithEvents tlstpClearImage As ToolStripMenuItem
     Friend WithEvents tlstpAddImage As ToolStripMenuItem
     Private _sceneSize As DisplayType
-    Event NewSceneClicked()
+    Event NewSceneClicked(pt As Point)
     Event DeleteSceneClicked(scn As Scene)
     Event MoveSceneClicked(scn As Scene)
 
@@ -273,11 +273,13 @@ Friend Class Canvas
         Return Nothing
     End Function
     Private noOfBandsH, noOfBandsV As Integer
+    Private sceneRectangleSlots As New List(Of Rectangle)
     Private Sub CalculateGrid()
         If SceneSize = DisplayType.Medium Then
             Dim cnt As Integer = 1
             Dim totWidth, totHeight As Integer
             totWidth = (cnt + 1) * bw + cnt * SceneWidthMedium
+
             While totWidth <= Me.Width
                 cnt += 1
                 totWidth = (cnt + 1) * bw + cnt * SceneWidthMedium
@@ -294,6 +296,14 @@ Friend Class Canvas
             cnt -= 1
             noOfBandsH = cnt
             Me.Height = (cnt + 1) * bw + cnt * SceneHeightMedium
+            Dim totSceneCount = 24 'Just for count
+            sceneRectangleSlots.Clear()
+            For i = 0 To 5
+                For j = 0 To 3
+                    Dim rc As New Rectangle(New Point(bw * (i + 1) + i * SceneWidthMedium, bw * (j + 1) + j * SceneHeightMedium), New Size(SceneWidthMedium, SceneHeightMedium))
+                    sceneRectangleSlots.Add(rc)
+                Next
+            Next
         ElseIf SceneSize = DisplayType.Small Then
             Dim cnt As Integer = 1
             Dim totWidth, totHeight As Integer
@@ -314,6 +324,14 @@ Friend Class Canvas
             cnt -= 1
             noOfBandsH = cnt
             Me.Height = (cnt + 1) * bw + cnt * SceneHeightSmall
+            Dim totSceneCount = 100 'Just for count
+            sceneRectangleSlots.Clear()
+            For i = 0 To 9
+                For j = 0 To 9
+                    Dim rc As New Rectangle(New Point(bw * (i + 1) + i * SceneWidthSmall, bw * (j + 1) + j * SceneHeightSmall), New Size(SceneWidthSmall, SceneHeightSmall))
+                    sceneRectangleSlots.Add(rc)
+                Next
+            Next
         Else
             Dim cnt As Integer = 1
             Dim totWidth, totHeight As Integer
@@ -334,6 +352,14 @@ Friend Class Canvas
             cnt -= 1
             noOfBandsH = cnt
             Me.Height = (cnt + 1) * bw + cnt * SceneHeightLarge
+            Dim totSceneCount = 6 'Just for count
+            sceneRectangleSlots.Clear()
+            For i = 0 To 2
+                For j = 0 To 1
+                    Dim rc As New Rectangle(New Point(bw * (i + 1) + i * SceneWidthLarge, bw * (j + 1) + j * SceneHeightLarge), New Size(SceneWidthLarge, SceneHeightLarge))
+                    sceneRectangleSlots.Add(rc)
+                Next
+            Next
         End If
         Me.Invalidate()
     End Sub
@@ -412,6 +438,7 @@ Friend Class Canvas
         End If
     End Sub
 
+    Dim scnSlotPos As Point
     Private Sub Canvas_DoubleClick(sender As Object, e As EventArgs) Handles Me.DoubleClick
         If _selectedScene Is Nothing Then Exit Sub
         Dim ssn As New SceneDetails(_selectedScene)
@@ -425,7 +452,26 @@ Friend Class Canvas
             ctxCanvas.Enabled = False
         Else
             ctxCanvas.Enabled = True
-            tlstpNewScene.Enabled = True
+
+            tlstpNewScene.Enabled = False
+            scnSlotPos = Nothing
+            For Each c As Rectangle In sceneRectangleSlots
+                If c.Contains(cursorPos) Then
+                    tlstpNewScene.Enabled = True
+                    scnSlotPos = c.Location
+                    Exit For
+                End If
+            Next
+            If tlstpNewScene.Enabled Then
+                For Each s As Scene In _currentGame.Scenes.Values
+                    If s.Page = CurrentPAge Then
+                        If s.HitTest(cursorPos) Then
+                            tlstpNewScene.Enabled = False
+                            Exit For
+                        End If
+                    End If
+                Next
+            End If
             If SelectedScene Is Nothing Then
                 tlstpEditScene.Enabled = False
                 tlstpDeleteScene.Enabled = False
@@ -434,21 +480,21 @@ Friend Class Canvas
                 tlstpImage.Enabled = False
             Else
                 tlstpEditScene.Enabled = True
-                tlstpDeleteScene.Enabled = True
-                tlstpMoveScene.Enabled = True
-                tlstpMark.Enabled = True
-                If SceneSize = DisplayType.Large Then
-                    tlstpImage.Enabled = True
-                    If SelectedScene.SceneImage Is blankimage Then
-                        tlstpClearImage.Enabled = False
+                    tlstpDeleteScene.Enabled = True
+                    tlstpMoveScene.Enabled = True
+                    tlstpMark.Enabled = True
+                    If SceneSize = DisplayType.Large Then
+                        tlstpImage.Enabled = True
+                        If SelectedScene.SceneImage Is blankimage Then
+                            tlstpClearImage.Enabled = False
+                        Else
+                            tlstpClearImage.Enabled = True
+                        End If
                     Else
-                        tlstpClearImage.Enabled = True
+                        tlstpImage.Enabled = False
                     End If
-                Else
-                    tlstpImage.Enabled = False
                 End If
             End If
-        End If
     End Sub
 
     Private Sub tlstpDeleteScene_Click(sender As Object, e As EventArgs) Handles tlstpDeleteScene.Click
@@ -465,7 +511,9 @@ Friend Class Canvas
     End Sub
 
     Private Sub tlstpNewScene_Click(sender As Object, e As EventArgs) Handles tlstpNewScene.Click
-        RaiseEvent NewSceneClicked()
+        RaiseEvent NewSceneClicked(scnSlotPos)
+        Canvas_MouseDown(Me, New MouseEventArgs(MouseButtons.Left, 1, cursorPos.X, cursorPos.Y, 0))
+        Canvas_DoubleClick(Me, Nothing)
     End Sub
 
     Private Sub tlstpMarkComplete_Click(sender As Object, e As EventArgs) Handles tlstpMarkComplete.Click

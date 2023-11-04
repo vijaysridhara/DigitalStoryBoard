@@ -99,6 +99,9 @@ Friend Class Scene
               "</scene>" & vbCrLf
         Return finalString
     End Function
+    Public Function HitTest(pt As Point) As Boolean
+        Return (New Rectangle(Me.Location, Me.Size).Contains(pt))
+    End Function
     Public Property Size As Size
         Get
             Return _size

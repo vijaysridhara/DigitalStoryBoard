@@ -12,7 +12,7 @@ Imports System.Runtime.InteropServices
 <Assembly: AssemblyDescription("A quick draft story board application, where you can quickly create scenes and sequence them.")>
 <Assembly: AssemblyCompany("Vijay Sridhara")>
 <Assembly: AssemblyProduct("DigitalStoryBoard")>
-<Assembly: AssemblyCopyright("Copyright ©  Vijay Sridhara 2020-2022")>
+<Assembly: AssemblyCopyright("Copyright ©  Vijay Sridhara 2020-2023")>
 <Assembly: AssemblyTrademark("")>
 
 <Assembly: ComVisible(False)>
@@ -31,5 +31,5 @@ Imports System.Runtime.InteropServices
 ' by using the '*' as shown below:
 ' <Assembly: AssemblyVersion("1.0.*")>
 
-<Assembly: AssemblyVersion("0.1.4.1")>
-<Assembly: AssemblyFileVersion("0.1.4.1")>
+<Assembly: AssemblyVersion("0.1.4.2")>
+<Assembly: AssemblyFileVersion("0.1.4.2")>

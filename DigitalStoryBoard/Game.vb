@@ -393,10 +393,12 @@ Friend Class Game
 
                 scn.Size = New Size(SceneWidthLarge, SceneHeightLarge)
             End If
+
             AddHandler scn.SceneChanged, AddressOf SceneChanged
             AddHandler scn.SceneSelected, AddressOf SceneSelected
             _isDirty = True
             Return True
+
         Catch ex As Exception
             DE(ex)
             Return False
@@ -436,7 +438,8 @@ Friend Class Game
         Next
         Return cnt
     End Function
-    Public Function AddScene(pNo As String, Optional id As String = "") As Scene
+
+    Public Function AddScene(pNo As String, Optional loc As Point = Nothing, Optional id As String = "") As Scene
         Dim SCN As Scene
         If String.IsNullOrEmpty(id) Then
             id = GetNextSceneID()
@@ -455,7 +458,7 @@ Friend Class Game
             SCN.SceneSize = Me.StoryType
             SCN.Size = New Size(SceneWidthLarge, SceneHeightLarge)
         End If
-
+        If Not loc = Nothing Then SCN.Location = loc
         SCN.Page = pNo
         _scenes.Add(SCN.SceneID, SCN)
 
@@ -463,6 +466,12 @@ Friend Class Game
         AddHandler SCN.SceneChanged, AddressOf SceneChanged
         AddHandler SCN.SceneSelected, AddressOf SceneSelected
         RaiseEvent GameChanged()
+        For Each s As Scene In Scenes.Values
+            s.Selected = False
+        Next
+
+        SCN.Selected = True
+        RaiseEvent ASceneSelected(SCN)
         Return SCN
     End Function
     Public Property Comments As String

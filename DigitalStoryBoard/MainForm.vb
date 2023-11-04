@@ -154,6 +154,7 @@ Friend Class MainForm
             currentGame.AddScene(lstPages.SelectedItem)
             lblPAgeDetails.Text = lstPages.SelectedItem & vbCrLf & "Scenes  : " & currentGame.GetScenecountinPAge(lstPages.SelectedItem) & vbCrLf & "Deleted : " & currentGame.GetDelSceneCountinginPAge(lstPages.SelectedItem)
             Canvas1.Invalidate()
+            
         End If
     End Sub
 
@@ -394,8 +395,12 @@ Friend Class MainForm
         currentGame.PageName(lstPages.SelectedItem) = txtPAgename.Text.Trim
     End Sub
 
-    Private Sub Canvas1_NewSceneClicked() Handles Canvas1.NewSceneClicked
-        butNewScene_Click(Nothing, Nothing)
+    Private Sub Canvas1_NewSceneClicked(loc As Point) Handles Canvas1.NewSceneClicked
+        If Not currentGame Is Nothing Then
+            currentGame.AddScene(lstPages.SelectedItem, loc)
+            lblPAgeDetails.Text = lstPages.SelectedItem & vbCrLf & "Scenes  : " & currentGame.GetScenecountinPAge(lstPages.SelectedItem) & vbCrLf & "Deleted : " & currentGame.GetDelSceneCountinginPAge(lstPages.SelectedItem)
+            Canvas1.Invalidate()
+        End If
     End Sub
 
 

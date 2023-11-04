@@ -33,7 +33,7 @@ Friend Class SceneAdj
                 MsgBox("This ID already exists, try different", MsgBoxStyle.Information)
                 Exit Sub
             End If
-            curGame.AddScene(curPage, GetFullSceneID)
+            curGame.AddScene(curPage, Nothing, GetFullSceneID)
         End If
         Me.DialogResult = DialogResult.OK
         Me.Close()

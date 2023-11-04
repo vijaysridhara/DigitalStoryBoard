@@ -80,8 +80,11 @@ Friend Class GameDetails
                 End If
 
             Next
-            .Characters = ""
+
             If .StoryType = DisplayType.Large Then
+                If ImageList1.Images.Count > 0 Then
+                    .Characters = ""
+                End If
                 For Each im As String In ImageList1.Images.Keys
                     .GameChars.Add(im, ImageList1.Images.Item(im))
 
