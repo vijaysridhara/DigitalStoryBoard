@@ -511,4 +511,10 @@ Friend Class MainForm
     Private Sub Canvas1_Resize(sender As Object, e As EventArgs) Handles Canvas1.Resize
         pnlCanvasContainer_Resize(Nothing, Nothing)
     End Sub
+
+    Private Sub butSupport_Click(sender As Object, e As EventArgs) Handles butSupport.Click
+        Dim pinfo As New ProcessStartInfo("https://www.facebook.com/groups/vssoftware")
+        pinfo.UseShellExecute = True
+        Process.Start(pinfo)
+    End Sub
 End Class

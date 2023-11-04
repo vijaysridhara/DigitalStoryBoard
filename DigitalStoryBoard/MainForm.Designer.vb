@@ -35,6 +35,7 @@ Partial Class MainForm
         Me.chkShowoutline = New System.Windows.Forms.CheckBox()
         Me.txtPAgename = New System.Windows.Forms.TextBox()
         Me.lblPAgeDetails = New System.Windows.Forms.Label()
+        Me.butSupport = New System.Windows.Forms.Button()
         Me.butAbout = New System.Windows.Forms.Button()
         Me.lblGameName = New System.Windows.Forms.Label()
         Me.butRecover = New System.Windows.Forms.Button()
@@ -64,7 +65,7 @@ Partial Class MainForm
         Me.butExport.Location = New System.Drawing.Point(163, 41)
         Me.butExport.Name = "butExport"
         Me.butExport.Size = New System.Drawing.Size(74, 29)
-        Me.butExport.TabIndex = 5
+        Me.butExport.TabIndex = 8
         Me.butExport.Text = "E&xport"
         Me.butExport.UseVisualStyleBackColor = True
         '
@@ -76,7 +77,7 @@ Partial Class MainForm
         Me.butEditDetails.Location = New System.Drawing.Point(163, 6)
         Me.butEditDetails.Name = "butEditDetails"
         Me.butEditDetails.Size = New System.Drawing.Size(74, 29)
-        Me.butEditDetails.TabIndex = 4
+        Me.butEditDetails.TabIndex = 2
         Me.butEditDetails.Text = "&Edit"
         Me.butEditDetails.UseVisualStyleBackColor = True
         '
@@ -88,7 +89,7 @@ Partial Class MainForm
         Me.butSaveGame.Location = New System.Drawing.Point(3, 41)
         Me.butSaveGame.Name = "butSaveGame"
         Me.butSaveGame.Size = New System.Drawing.Size(74, 29)
-        Me.butSaveGame.TabIndex = 3
+        Me.butSaveGame.TabIndex = 6
         Me.butSaveGame.Text = "&Save"
         Me.butSaveGame.UseVisualStyleBackColor = True
         '
@@ -99,7 +100,7 @@ Partial Class MainForm
         Me.butOpenGame.Location = New System.Drawing.Point(83, 6)
         Me.butOpenGame.Name = "butOpenGame"
         Me.butOpenGame.Size = New System.Drawing.Size(74, 29)
-        Me.butOpenGame.TabIndex = 2
+        Me.butOpenGame.TabIndex = 1
         Me.butOpenGame.Text = "&Open"
         Me.butOpenGame.UseVisualStyleBackColor = True
         '
@@ -110,7 +111,7 @@ Partial Class MainForm
         Me.butNewGame.Location = New System.Drawing.Point(3, 6)
         Me.butNewGame.Name = "butNewGame"
         Me.butNewGame.Size = New System.Drawing.Size(74, 29)
-        Me.butNewGame.TabIndex = 1
+        Me.butNewGame.TabIndex = 0
         Me.butNewGame.Text = "&New"
         Me.butNewGame.UseVisualStyleBackColor = True
         '
@@ -142,6 +143,7 @@ Partial Class MainForm
         Me.Panel2.Controls.Add(Me.chkShowoutline)
         Me.Panel2.Controls.Add(Me.txtPAgename)
         Me.Panel2.Controls.Add(Me.lblPAgeDetails)
+        Me.Panel2.Controls.Add(Me.butSupport)
         Me.Panel2.Controls.Add(Me.butAbout)
         Me.Panel2.Controls.Add(Me.butExport)
         Me.Panel2.Controls.Add(Me.lblGameName)
@@ -165,7 +167,7 @@ Partial Class MainForm
         Me.chkShowoutline.Location = New System.Drawing.Point(243, 49)
         Me.chkShowoutline.Name = "chkShowoutline"
         Me.chkShowoutline.Size = New System.Drawing.Size(101, 20)
-        Me.chkShowoutline.TabIndex = 10
+        Me.chkShowoutline.TabIndex = 9
         Me.chkShowoutline.Text = "Sho&w outline"
         Me.chkShowoutline.UseVisualStyleBackColor = True
         '
@@ -179,7 +181,7 @@ Partial Class MainForm
         Me.txtPAgename.Location = New System.Drawing.Point(692, 48)
         Me.txtPAgename.Name = "txtPAgename"
         Me.txtPAgename.Size = New System.Drawing.Size(338, 22)
-        Me.txtPAgename.TabIndex = 9
+        Me.txtPAgename.TabIndex = 11
         Me.txtPAgename.Text = "Pagename"
         '
         'lblPAgeDetails
@@ -190,8 +192,19 @@ Partial Class MainForm
         Me.lblPAgeDetails.Location = New System.Drawing.Point(527, 6)
         Me.lblPAgeDetails.Name = "lblPAgeDetails"
         Me.lblPAgeDetails.Size = New System.Drawing.Size(107, 45)
-        Me.lblPAgeDetails.TabIndex = 8
+        Me.lblPAgeDetails.TabIndex = 10
         Me.lblPAgeDetails.Text = "Page No : " & Global.Microsoft.VisualBasic.ChrW(13) & Global.Microsoft.VisualBasic.ChrW(10) & "Scenes  : " & Global.Microsoft.VisualBasic.ChrW(13) & Global.Microsoft.VisualBasic.ChrW(10) & "Deleted :"
+        '
+        'butSupport
+        '
+        Me.butSupport.FlatStyle = System.Windows.Forms.FlatStyle.Popup
+        Me.butSupport.ForeColor = System.Drawing.SystemColors.Window
+        Me.butSupport.Location = New System.Drawing.Point(403, 6)
+        Me.butSupport.Name = "butSupport"
+        Me.butSupport.Size = New System.Drawing.Size(74, 29)
+        Me.butSupport.TabIndex = 5
+        Me.butSupport.Text = "&Support"
+        Me.butSupport.UseVisualStyleBackColor = True
         '
         'butAbout
         '
@@ -200,7 +213,7 @@ Partial Class MainForm
         Me.butAbout.Location = New System.Drawing.Point(323, 6)
         Me.butAbout.Name = "butAbout"
         Me.butAbout.Size = New System.Drawing.Size(74, 29)
-        Me.butAbout.TabIndex = 6
+        Me.butAbout.TabIndex = 4
         Me.butAbout.Text = "&About"
         Me.butAbout.UseVisualStyleBackColor = True
         '
@@ -212,7 +225,7 @@ Partial Class MainForm
         Me.lblGameName.Location = New System.Drawing.Point(1092, 0)
         Me.lblGameName.Name = "lblGameName"
         Me.lblGameName.Size = New System.Drawing.Size(363, 76)
-        Me.lblGameName.TabIndex = 7
+        Me.lblGameName.TabIndex = 12
         Me.lblGameName.TextAlign = System.Drawing.ContentAlignment.MiddleCenter
         '
         'butRecover
@@ -223,7 +236,7 @@ Partial Class MainForm
         Me.butRecover.Location = New System.Drawing.Point(243, 6)
         Me.butRecover.Name = "butRecover"
         Me.butRecover.Size = New System.Drawing.Size(74, 29)
-        Me.butRecover.TabIndex = 4
+        Me.butRecover.TabIndex = 3
         Me.butRecover.Text = "&Recover"
         Me.butRecover.UseVisualStyleBackColor = True
         '
@@ -235,7 +248,7 @@ Partial Class MainForm
         Me.butSaveAs.Location = New System.Drawing.Point(83, 41)
         Me.butSaveAs.Name = "butSaveAs"
         Me.butSaveAs.Size = New System.Drawing.Size(74, 29)
-        Me.butSaveAs.TabIndex = 3
+        Me.butSaveAs.TabIndex = 7
         Me.butSaveAs.Text = "Save &as"
         Me.butSaveAs.UseVisualStyleBackColor = True
         '
@@ -418,4 +431,5 @@ Partial Class MainForm
     Friend WithEvents butSaveAs As Button
     Friend WithEvents butRecover As Button
     Friend WithEvents chkShowoutline As CheckBox
+    Friend WithEvents butSupport As Button
 End Class
